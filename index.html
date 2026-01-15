@@ -2,29 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Secure Wallet Setup — Video Guide</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="A secure, step-by-step crypto wallet setup video guide." />
+  <meta name="description" content="Step-by-step, non-custodial wallet setup. Watch once. Pause often. Do not rush." />
   <meta name="theme-color" content="#05070c" />
 
-  <link rel="stylesheet" href="styles.css" />
-</head>
-  
-  <!-- Social / Link Preview -->
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="Self-Defi" />
-<meta property="og:title" content="Secure Wallet Setup" />
-<meta property="og:description" content="A step-by-step, non-custodial guide to securing your digital assets." />
-<meta property="og:image" content="https://self-defi.github.io/Wallet-Setup/thumbnail.jpg" />
-<meta property="og:url" content="https://self-defi.github.io/Wallet-Setup/" />
+  <!-- Social / Link Preview (ABSOLUTE URLs required) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Self-Defi" />
+  <meta property="og:title" content="Secure Wallet Setup — Video Guide" />
+  <meta property="og:description" content="Step-by-step, non-custodial wallet setup. Watch once. Pause often. Do not rush." />
+  <meta property="og:url" content="https://self-defi.github.io/Wallet-Setup/" />
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Secure Wallet Setup" />
-<meta name="twitter:description" content="A step-by-step, non-custodial guide to securing your digital assets." />
-<meta name="twitter:image" content="https://self-defi.github.io/Wallet-Setup/thumbnail.jpg" />
+  <!-- IMPORTANT: thumbnail.jpg must exist at /Wallet-Setup/thumbnail.jpg -->
+  <meta property="og:image" content="https://self-defi.github.io/Wallet-Setup/thumbnail.jpg" />
+  <meta property="og:image:secure_url" content="https://self-defi.github.io/Wallet-Setup/thumbnail.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Secure Wallet Setup — Video Guide" />
+  <meta name="twitter:description" content="Step-by-step, non-custodial wallet setup. Watch once. Pause often. Do not rush." />
+  <meta name="twitter:image" content="https://self-defi.github.io/Wallet-Setup/thumbnail.jpg" />
+
+  <link rel="stylesheet" href="./styles.css" />
+</head>
 
 <body>
-  <!-- Background -->
+  <!-- Background layers (keep even if you switched to body::before/after in CSS) -->
   <div class="bg" aria-hidden="true"></div>
   <div class="overlay" aria-hidden="true"></div>
 
@@ -35,7 +41,7 @@
       <p class="lead">Watch once. Pause often. Do not rush.</p>
     </header>
 
-    <section class="card">
+    <section class="card" aria-label="Secure Wallet Setup video guide">
       <div class="cardTop">
         <div class="status">
           <span class="dot" aria-hidden="true"></span>
@@ -49,6 +55,7 @@
       </div>
 
       <div class="videoWrap">
+        <!-- Use a SINGLE clean source for iOS reliability -->
         <video
           id="setupVideo"
           controls
@@ -56,14 +63,12 @@
           preload="metadata"
           poster="poster.jpg"
         >
-          <!-- LOCKED to ipfs.io because it plays reliably on iOS/Brave -->
           <source
             src="https://ipfs.io/ipfs/bafybeicnto2jhyryfoe6uaes22tm5pyrlza7665hrjq73hv7prdhkmuqfu"
             type="video/mp4"
           />
           Your browser does not support the video tag.
         </video>
-
         <div class="vignette" aria-hidden="true"></div>
       </div>
 
@@ -77,33 +82,34 @@
 
         <div class="metaRow">
           <div class="metaLabel">Gateway</div>
-          <a
-            class="metaValue mono link"
-            id="gatewayLink"
-            href="https://ipfs.io/ipfs/bafybeicnto2jhyryfoe6uaes22tm5pyrlza7665hrjq73hv7prdhkmuqfu"
-            target="_blank"
-            rel="noreferrer"
-          >
-            https://ipfs.io/ipfs/…/prdhkmuqfu
-          </a>
+          <div class="metaValue">
+            <a
+              class="mono link"
+              id="gatewayLink"
+              href="https://ipfs.io/ipfs/bafybeicnto2jhyryfoe6uaes22tm5pyrlza7665hrjq73hv7prdhkmuqfu"
+              target="_blank"
+              rel="noreferrer"
+            >https://ipfs.io/ipfs/…/prdhkmuqfu</a>
+          </div>
         </div>
 
-        <div class="note">
+        <p class="note">
           Educational only. No wallet connections. No scripts touching keys. Pause when unsure.
-        </div>
+        </p>
       </div>
     </section>
 
-    <footer class="footer">
+    <footer class="footer" aria-label="disclaimer">
       <span>Non-custodial</span>
-      <span class="sep">·</span>
+      <span class="sep">•</span>
       <span>Educational only</span>
-      <span class="sep">·</span>
+      <span class="sep">•</span>
       <span>No wallet connections</span>
     </footer>
   </main>
 
-  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
-  <script src="app.js"></script>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script defer src="./app.js"></script>
 </body>
 </html>
