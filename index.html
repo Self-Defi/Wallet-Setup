@@ -5,13 +5,12 @@
   <title>Secure Wallet Setup — Video Guide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="A secure, step-by-step crypto wallet setup video guide." />
-
   <meta name="theme-color" content="#05070c" />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- Background -->
   <div class="bg" aria-hidden="true"></div>
   <div class="overlay" aria-hidden="true"></div>
 
@@ -30,8 +29,8 @@
         </div>
 
         <div class="actions">
-          <button class="btn" id="btnCopyCID" type="button" title="Copy CID">Copy CID</button>
-          <button class="btn" id="btnCopyLink" type="button" title="Copy gateway link">Copy Link</button>
+          <button class="btn" id="btnCopyCID" type="button">Copy CID</button>
+          <button class="btn" id="btnCopyLink" type="button">Copy Link</button>
         </div>
       </div>
 
@@ -43,19 +42,19 @@
           preload="metadata"
           poster="poster.jpg"
         >
-          <!-- Native IPFS (some environments) -->
+          <!-- Primary (iOS-friendly streaming) -->
           <source
-            src="ipfs://bafybeigxzird6q7ommxclgxjqm5ghgymrrxgji4ymq4mivxlwk2qm3uase"
+            src="https://dweb.link/ipfs/bafybeicnto2jhyryfoe6uaes22tm5pyrlza7665hrjq73hv7prdhkmuqfu"
             type="video/mp4"
           />
 
-          <!-- Gateway fallback (most browsers) -->
+          <!-- Fallbacks -->
           <source
-            src="https://cloudflare-ipfs.com/ipfs/bafybeigxzird6q7ommxclgxjqm5ghgymrrxgji4ymq4mivxlwk2qm3uase"
+            src="https://ipfs.io/ipfs/bafybeicnto2jhyryfoe6uaes22tm5pyrlza7665hrjq73hv7prdhkmuqfu"
             type="video/mp4"
           />
           <source
-            src="https://ipfs.io/ipfs/bafybeigxzird6q7ommxclgxjqm5ghgymrrxgji4ymq4mivxlwk2qm3uase"
+            src="https://cloudflare-ipfs.com/ipfs/bafybeicnto2jhyryfoe6uaes22tm5pyrlza7665hrjq73hv7prdhkmuqfu"
             type="video/mp4"
           />
 
@@ -69,16 +68,20 @@
         <div class="metaRow">
           <div class="metaLabel">CID</div>
           <div class="metaValue mono" id="cidText">
-            bafybeigxzird6q7ommxclgxjqm5ghgymrrxgji4ymq4mivxlwk2qm3uase
+            bafybeicnto2jhyryfoe6uaes22tm5pyrlza7665hrjq73hv7prdhkmuqfu
           </div>
         </div>
 
         <div class="metaRow">
           <div class="metaLabel">Gateway</div>
-          <a class="metaValue mono link" id="gatewayLink"
-             href="https://cloudflare-ipfs.com/ipfs/bafybeigxzird6q7ommxclgxjqm5ghgymrrxgji4ymq4mivxlwk2qm3uase"
-             target="_blank" rel="noreferrer">
-            https://cloudflare-ipfs.com/ipfs/…/wk2qm3uase
+          <a
+            class="metaValue mono link"
+            id="gatewayLink"
+            href="https://dweb.link/ipfs/bafybeicnto2jhyryfoe6uaes22tm5pyrlza7665hrjq73hv7prdhkmuqfu"
+            target="_blank"
+            rel="noreferrer"
+          >
+            https://dweb.link/ipfs/…/prdhkmuqfu
           </a>
         </div>
 
