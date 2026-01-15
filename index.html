@@ -11,6 +11,7 @@
 </head>
 
 <body>
+  <!-- Background -->
   <div class="bg" aria-hidden="true"></div>
   <div class="overlay" aria-hidden="true"></div>
 
@@ -42,22 +43,11 @@
           preload="metadata"
           poster="poster.jpg"
         >
-          <!-- Primary (iOS-friendly streaming) -->
-          <source
-            src="https://dweb.link/ipfs/bafybeicnto2jhyryfoe6uaes22tm5pyrlza7665hrjq73hv7prdhkmuqfu"
-            type="video/mp4"
-          />
-
-          <!-- Fallbacks -->
+          <!-- LOCKED to ipfs.io because it plays reliably on iOS/Brave -->
           <source
             src="https://ipfs.io/ipfs/bafybeicnto2jhyryfoe6uaes22tm5pyrlza7665hrjq73hv7prdhkmuqfu"
             type="video/mp4"
           />
-          <source
-            src="https://cloudflare-ipfs.com/ipfs/bafybeicnto2jhyryfoe6uaes22tm5pyrlza7665hrjq73hv7prdhkmuqfu"
-            type="video/mp4"
-          />
-
           Your browser does not support the video tag.
         </video>
 
@@ -77,11 +67,11 @@
           <a
             class="metaValue mono link"
             id="gatewayLink"
-            href="https://dweb.link/ipfs/bafybeicnto2jhyryfoe6uaes22tm5pyrlza7665hrjq73hv7prdhkmuqfu"
+            href="https://ipfs.io/ipfs/bafybeicnto2jhyryfoe6uaes22tm5pyrlza7665hrjq73hv7prdhkmuqfu"
             target="_blank"
             rel="noreferrer"
           >
-            https://dweb.link/ipfs/…/prdhkmuqfu
+            https://ipfs.io/ipfs/…/prdhkmuqfu
           </a>
         </div>
 
