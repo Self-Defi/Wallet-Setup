@@ -27,10 +27,36 @@ html,body{
    Uses poster.jpg in repo root
    ========================= */
 .bg{
+  position: fixed;
+
+  /* expand beyond viewport so blur never clips */
+  inset: -24px;
+
+  background-image: url("poster.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* iOS Safari paint/compositing fix */
+  .overlay{
   position:fixed;
   inset:0;
-  background: url("poster.jpg") center / cover no-repeat;
-
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(255,255,255,.06),
+      rgba(0,0,0,.55) 45%,
+      rgba(0,0,0,.88) 75%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.35),
+      rgba(0,0,0,.92)
+    );
+  will-change: transform;
+  transform: translateZ(0);
+  z-index:-2;
+}
   /* Cinematic treatment */
   filter:
     blur(28px)
@@ -38,10 +64,7 @@ html,body{
     contrast(1.06)
     brightness(.82);
 
-  /* Prevent blur edge bleed */
-  transform: scale(1.16);
-
-  z-index:-3;
+  z-index: -3;
 }
 
 /* Overlay stack: gradient + vignette for readability */
