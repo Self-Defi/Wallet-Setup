@@ -1,6 +1,6 @@
 (() => {
   const CID = "bafybeicnto2jhyryfoe6uaes22tm5pyrlza7665hrjq73hv7prdhkmuqfu";
-  const GATEWAY = `https://dweb.link/ipfs/${CID}`;
+  const GATEWAY = `https://ipfs.io/ipfs/${CID}`; // LOCKED: confirmed working
 
   const toastEl = document.getElementById("toast");
   const btnCopyCID = document.getElementById("btnCopyCID");
@@ -12,7 +12,7 @@
 
   if (gatewayLink) {
     gatewayLink.href = GATEWAY;
-    gatewayLink.textContent = `https://dweb.link/ipfs/…/${CID.slice(-10)}`;
+    gatewayLink.textContent = `https://ipfs.io/ipfs/…/${CID.slice(-10)}`;
   }
 
   function showToast(msg) {
