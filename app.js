@@ -1,6 +1,6 @@
 (() => {
-  const CID = "bafybeigxzird6q7ommxclgxjqm5ghgymrrxgji4ymq4mivxlwk2qm3uase";
-  const GATEWAY = `https://cloudflare-ipfs.com/ipfs/${CID}`;
+  const CID = "bafybeicnto2jhyryfoe6uaes22tm5pyrlza7665hrjq73hv7prdhkmuqfu";
+  const GATEWAY = `https://dweb.link/ipfs/${CID}`;
 
   const toastEl = document.getElementById("toast");
   const btnCopyCID = document.getElementById("btnCopyCID");
@@ -8,11 +8,11 @@
   const cidText = document.getElementById("cidText");
   const gatewayLink = document.getElementById("gatewayLink");
 
-  // Ensure UI values match constants (single source of truth)
   if (cidText) cidText.textContent = CID;
+
   if (gatewayLink) {
     gatewayLink.href = GATEWAY;
-    gatewayLink.textContent = `https://cloudflare-ipfs.com/ipfs/…/${CID.slice(-10)}`;
+    gatewayLink.textContent = `https://dweb.link/ipfs/…/${CID.slice(-10)}`;
   }
 
   function showToast(msg) {
@@ -28,7 +28,6 @@
       await navigator.clipboard.writeText(text);
       showToast(okMsg);
     } catch {
-      // Fallback for older browsers / stricter contexts
       const ta = document.createElement("textarea");
       ta.value = text;
       ta.setAttribute("readonly", "");
