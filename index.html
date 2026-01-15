@@ -6,38 +6,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="A secure, step-by-step crypto wallet setup video guide." />
 
+  <meta name="theme-color" content="#05070c" />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-
   <!-- Background -->
-  <div class="bg"></div>
-  <div class="overlay"></div>
+  <div class="bg" aria-hidden="true"></div>
+  <div class="overlay" aria-hidden="true"></div>
 
-  <!-- Content -->
   <main class="container">
     <header class="header">
+      <div class="kicker">Non-custodial procedure</div>
       <h1>Secure Wallet Setup</h1>
-      <p>Watch once. Pause often. Do not rush.</p>
+      <p class="lead">Watch once. Pause often. Do not rush.</p>
     </header>
 
-    <section class="video-wrap">
-      <video
-        controls
-        playsinline
-        preload="metadata"
-        poster=""
-      >
-        <source src="wallet-setup.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+    <section class="card">
+      <div class="cardTop">
+        <div class="status">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Video guide hosted on IPFS</span>
+        </div>
+
+        <div class="actions">
+          <button class="btn" id="btnCopyCID" type="button" title="Copy CID">Copy CID</button>
+          <button class="btn" id="btnCopyLink" type="button" title="Copy gateway link">Copy Link</button>
+        </div>
+      </div>
+
+      <div class="videoWrap">
+        <video
+          id="setupVideo"
+          controls
+          playsinline
+          preload="metadata"
+          poster="poster.jpg"
+        >
+          <!-- Native IPFS (some environments) -->
+          <source
+            src="ipfs://bafybeigxzird6q7ommxclgxjqm5ghgymrrxgji4ymq4mivxlwk2qm3uase"
+            type="video/mp4"
+          />
+
+          <!-- Gateway fallback (most browsers) -->
+          <source
+            src="https://cloudflare-ipfs.com/ipfs/bafybeigxzird6q7ommxclgxjqm5ghgymrrxgji4ymq4mivxlwk2qm3uase"
+            type="video/mp4"
+          />
+          <source
+            src="https://ipfs.io/ipfs/bafybeigxzird6q7ommxclgxjqm5ghgymrrxgji4ymq4mivxlwk2qm3uase"
+            type="video/mp4"
+          />
+
+          Your browser does not support the video tag.
+        </video>
+
+        <div class="vignette" aria-hidden="true"></div>
+      </div>
+
+      <div class="meta">
+        <div class="metaRow">
+          <div class="metaLabel">CID</div>
+          <div class="metaValue mono" id="cidText">
+            bafybeigxzird6q7ommxclgxjqm5ghgymrrxgji4ymq4mivxlwk2qm3uase
+          </div>
+        </div>
+
+        <div class="metaRow">
+          <div class="metaLabel">Gateway</div>
+          <a class="metaValue mono link" id="gatewayLink"
+             href="https://cloudflare-ipfs.com/ipfs/bafybeigxzird6q7ommxclgxjqm5ghgymrrxgji4ymq4mivxlwk2qm3uase"
+             target="_blank" rel="noreferrer">
+            https://cloudflare-ipfs.com/ipfs/…/wk2qm3uase
+          </a>
+        </div>
+
+        <div class="note">
+          Educational only. No wallet connections. No scripts touching keys. Pause when unsure.
+        </div>
+      </div>
     </section>
 
     <footer class="footer">
-      <p>Non-custodial · Educational only · No wallet connections</p>
+      <span>Non-custodial</span>
+      <span class="sep">·</span>
+      <span>Educational only</span>
+      <span class="sep">·</span>
+      <span>No wallet connections</span>
     </footer>
   </main>
 
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
   <script src="app.js"></script>
 </body>
 </html>
